@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <ctype.h>
+/*
+* Exercise 2-3: Write the function htoi, which converts a string of hexadecimal
+* digits (including an optional 0x or 0X) into its equivalent integer value.
+* Author: Matias Bustos (@matiasdx)
+*/
 int htoi(char h[]);
 
 int main(void){
-    char chara[] = "0x1F";
-    int caracter=htoi(chara);
-    printf("%d\n",caracter);
+    // test with 0x1F expected output 31
+    char hex_str[] = "0x1F";
+    int integer_out=htoi(hex_str);
+    printf("%d\n",integer_out);
     return 0;
 }
 
