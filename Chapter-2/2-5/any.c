@@ -9,14 +9,11 @@
 
 int any(char s1[], char s2[]);
 
-void squeezeA(char s1[],char s2[]);
-
-
 int main(void){
     // test with s1="hola mundo" and s2="hello world", expected output: 0
-    char chara[]="hola mundo";
-    char chara2[]="hello world";
-    int result = any(chara, chara2);
+    char str1[]="hola mundo";
+    char str2[]="hello world";
+    int result = any(str1, str2);
     printf("%d\n",result);
     return 0;    
 }
