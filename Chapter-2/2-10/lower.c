@@ -1,28 +1,26 @@
 #include <stdio.h>
-
-/* Exercise 2-9: In a two's complement number system, x &= (x-1) deletes the rightmost 1-bit
- * in x. Explain why. Use this observation to write a faster version of bitcount.
- * Explain:
-    * When subtracting 1 in binary, all zeros to the right of the last 1 are converted to ones, 
-    * and that last 1 is turned off. By applying the & operator with the original value,
-    * the original zeros eliminate those turned-on ones,  and the last 1 does not survive, 
-    * remaining off.
+/* 
+ * Exercise 2-10: Rewrite the function lower, which converts upper case
+ * letters to lower case, with a conditional expression instead of if-else
+ * Author: Matias Bustos (@matiasdx)
 */
-int bitcount(unsigned x);
+int lower (int c);
 
 int main(void){
-    unsigned int bit=0x29c; //0x29c is 668 in decimal (binario: 0b01010011100)
-    //test with 0x14c expected output:"Number of 1-bits in 668 is: 5"
-    int result=bitcount(bit);
-    printf("Number of 1-bits in %u is: %d\n", bit, result);
+    // The expected output in both cases is 'a'
+    // Case 1: Test with capital letters
+    char upper_c = 'A';
+    char low_c = lower(upper_c);
+    printf("%c\n", low_c);
+    // Case 2: Test with lowercase letters (Should remain unchanged)
+    upper_c = 'a';
+    low_c = lower(upper_c);
+    printf("%c\n", low_c);
     return 0;
 }
 
-
-int bitcount(unsigned x){
-    int i;
-    for (i=0;x!=0;x&=(x-1)){
-        i++;
-    }
-    return i;
+int lower (int c){
+    return (c >= 'A' && c <= 'Z') ? c + 'a' - 'A' : c;
 }
+
+
