@@ -17,7 +17,6 @@
  * the positive digits. Then I change the guard condition since n will be negative.
 */
 
-
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,9 +36,7 @@ int main(void) {
 
 void itoa(int n, char s[]) {
     int i, sign;
-    if ((sign = n) < 0) {
-        n = -n;
-    }
+    sign = n;
     i=0;
     do {
         s[i++] = abs(n % 10) + '0';
