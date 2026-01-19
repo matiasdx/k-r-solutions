@@ -12,18 +12,14 @@
 
 int strrindex(char source[], char searchFor[]);
 
-char pattern [] = "za"; // patron para buscar
-
 int main(void) {
     char textToSearch[] = "pizaza";
     char patternToFind[] = "za";
-    // Test:"pizaza" is what i'm looking for,
-    // and "za" is the place to find it.
-    // The position furthest to the right is 4.
+    // Test: We are looking for "za" inside "pizaza".
+    // The rightmost position of "za" starts at index 4.
     int pos = strrindex(textToSearch, patternToFind);
     if (pos >= 0) {
-        printf("The %s pattern was found in position %d",patternToFind, pos);
-        return 1;
+        printf("Pattern %s found at rightmost position %d\n",patternToFind, pos);
     }
     return 0;
 }
