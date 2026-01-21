@@ -58,7 +58,7 @@ double atof(char s[]) {
         e = 10.0 * e + (s[i] - '0');
     }
     for (int k=0; e > k; ++k) {
-        if (sign == -1) {
+        if (e_sign == -1) {
             e_val /= 10;
         }else {
             e_val *= 10;
